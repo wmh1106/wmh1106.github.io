@@ -1,9 +1,6 @@
-# Vue
+# JavaScript
 
-- [vue](/Vue/vue)
-- [组件间的循环引用](/Vue/组件间的循环引用)
-- [自定义指令](/Vue/自定义指令)
+- [常用ES6的API](/JavaScript/常用ES6的API)
 
 
-浏览器逐帧动画机制
 
