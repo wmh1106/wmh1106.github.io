@@ -90,6 +90,10 @@ var fn = (var1,var2)=>{
 
 #### 1. 默认值 和 解构
 
+默认值：给形参直接赋值
+
+在函数体中，不能用let或const再次声明与形参同名的变量，否则会报错（重复声明）
+
 ```javascript
 function fn(b=1, a) {
     console.log(a * b);

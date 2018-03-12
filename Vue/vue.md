@@ -1,33 +1,20 @@
-
-# VUE 核心点
-
-脚手架：模板工程(不用每次自己去配置很多共同的东西)
-
-## Vue要学的内容
-
-1. 声明式的渲染（Declarative Rendering）
-2. 组件系统（Components System）
-3. 客户端路由器（vue-router）
-4. 大规模的状态管理(vuex)
-5. 构建工具（vue-cli）
-6. 数据交互 (axios)
-
----
+# Vue
 
 ## 核心：数据绑定和组件
 
-### 1. 响应式的数据绑定
+#### 1. 响应式的数据绑定
 
 当数据发生改变  -> 视图自动更新
+
 忘记操作DOM这回事，而是专注于操作数据
 
 Object.definedProperty中的 setter/getter 代理数据，监控数据的操作
 
-### 2. 可组合的视图组件
+#### 2. 可组合的视图组件
 
-把视图按照功能，切分若干基本单元
-组件可以一级一级组合成整个应用，形成了倒置的组件树
-使用组件的好处：可维护、可重用、可测试
+- 把视图按照功能，切分若干基本单元
+- 组件可以一级一级组合成整个应用，形成了倒置的组件树
+- 使用组件的好处：可维护、可重用、可测试
 
 ---
 
@@ -39,31 +26,7 @@ Object.definedProperty中的 setter/getter 代理数据，监控数据的操作
 
 ---
 
-## Vue 实例：
-
-### 全局的构造函数
-
-`new Vue(option)`
-
-### 选项对象 `option`
-
-#### 1. el：告诉Vue管理的模板范围
-
-#### 2. data：数据对象，会被实例代理，转成getter/setter形式
-
-- 模板、视图
-- 数据添加到模板中
-- 把数据与模板进行关联：模板语法（插值表达式）
-- 插值表达式：
-	1. 使用双大括号（“Mustache”语法）做文本插值
-	2. 可以写任意表达式
-	3. 属性名、条件运算符、数据方法调用
-
-#### 3. methods:
-
-vue 代理 data 数据是响应的，新添加的属性不具备响应功能，改变后不会更新视图
-
-vue 实例自身属性和方法：vm.$el、vm.$data
+# [Vue 实例](Vue/Vue实例.md)
 
 ---
 
@@ -72,15 +35,28 @@ vue 实例自身属性和方法：vm.$el、vm.$data
 - 区别：命令式渲染
 - vue 是声明式渲染
 
-
 ## vue 的指令
 
-指令：是以标签属性存在的。所以也就是说，它是**在 html 中使用的**
+- 是以标签自定义属性存在的。所以也就是说，它是**在 html 中使用的**，以`v-开头`
+- 将数据和DOM做关联，当表达式的值改变时，响应式地作用在视图
+- 预期的值为javascript表达式
 
-指令：可以接收表达式
----
+指令列表：
 
-## 计算属性
+v-text、v-html、v-clock、v-once、v-for、v-if、v-show、v-on
+
+指令 v-for：对渲染的列表的结构采用“就地复用”的策略，也就说当数据重新排列数据时，会复用已在页面渲染好的元素，不会移动 DOM 元素来匹配数据项的顺序，这种模式是高效的，改变现有位置的结构的数据即可
+
+指令 v-if：初始页面根据条件判断是否要渲染某一块的模板
+
+指令 v-show：频繁的切换模板的显示隐藏
+
+指令 v-on：事件处理函数写在`methods`中,在模板中**`不传参`**，只写上函数名字，函数`第一个参数是事件对象`,在**模板中**传参，需要手动在模板中使用`$event`传入事件对象。事件处理函数中的`this`都指向`实例对象`
+
+    语法：v-on:事件名.修饰符="事件处理函数"
+    常用修饰符：.stop、.prevent、.capture、.self、.once
+    按键修饰符：.enter、.tab、.delete 、.esc、.space、
+		    .up、.down、.left、.right
 
 ## 模板
 
@@ -91,14 +67,28 @@ vue 实例自身属性和方法：vm.$el、vm.$data
         将 html结构写在 script 标签中，设置“`type="x-template"`”
     3. render
 
+---
+
+
+
 变异方法
 
 深层监控
 
 通过hash，过滤数据
 
+## 双向数据绑定
 
-组件：
+单向数据绑定：
+数据变化 -》 更新视图
+视图变化 -》 数据不变化
+
+双向数据绑定：
+数据变化 -》 更新视图
+视图变化 -》 数据变化
+
+
+## 组件：
     定义组件：全局|局部
     传输数据：
         子->父：定义自定义属性
@@ -107,75 +97,12 @@ vue 实例自身属性和方法：vm.$el、vm.$data
 
 计算属性依赖于 data 属性里的 key
 
-
-# 启动应用和选项对象
-
-![启动应用和选项对象](https://ws3.sinaimg.cn/large/006tNc79ly1fnlvqx0xfwj31c80oqths.jpg)
-
-![指令](https://ws4.sinaimg.cn/large/006tNc79gy1fnlvs5xw1mj31be0q2dnf.jpg)
-
-![计算属性](https://ws1.sinaimg.cn/large/006tNc79gy1fnlvuq917bj31bg0sgn3v.jpg)
-
-![组件](https://ws4.sinaimg.cn/large/006tNc79gy1fnlvx2bqksj311k0syn6a.jpg)
-
-![vue-cli](https://ws2.sinaimg.cn/large/006tNc79gy1fnlxyn97xvj30p80pc0ux.jpg)
-
-使用组件3部：引入组件、注册组件、使用组件
-
-![vuex](https://ws4.sinaimg.cn/large/006tNc79gy1fnlyqqreh1j31bw0sidob.jpg)
-
-![vuex 使用](https://ws1.sinaimg.cn/large/006tNc79gy1fnlywnwgnyj30vm0ui41n.jpg)
-
-![vuex 核心点](https://ws3.sinaimg.cn/large/006tNc79ly1fnlz38qbn1j31aw0patip.jpg)
-
-![vuex 原则](https://ws1.sinaimg.cn/large/006tNc79gy1fnlzzqlyfqj30zc0kkae8.jpg)
-
----
-# axios
-
-![axios](https://ws2.sinaimg.cn/large/006tNc79gy1fnm0d794iij319g0sute0.jpg)
-
-mock数据：
-http://easy-mock.com
-
-![axios api](https://ws4.sinaimg.cn/large/006tNc79gy1fnm0g6scz9j30ww0xs0z9.jpg)
-
-![](https://ws3.sinaimg.cn/large/006tNc79gy1fnm0u2a0vwj316o0xi0yt.jpg)
-
-![](https://ws1.sinaimg.cn/large/006tNc79gy1fnm1ojsq00j30xo0se79b.jpg)
-
-![](https://ws2.sinaimg.cn/large/006tNc79gy1fnm1ryt2gxj30rg0f6wfx.jpg)
-
-![](https://ws1.sinaimg.cn/large/006tNc79gy1fnm1vc8d6jj318y0toaft.jpg)
-
-![](https://ws3.sinaimg.cn/large/006tNc79gy1fnm20tnit8j30so0oymzx.jpg)
-
 ---
 
-# router
-
-![](https://ws1.sinaimg.cn/large/006tNc79gy1fnm286rdrdj31cm0ykjvn.jpg)
-
-![](https://ws2.sinaimg.cn/large/006tNc79gy1fnm2bjgiowj31bk0awgno.jpg)
-
-![](https://ws3.sinaimg.cn/large/006tNc79gy1fnm2db6ojfj310g0y00z3.jpg)
-
-![](https://ws1.sinaimg.cn/large/006tNc79gy1fnm2ph4gpqj31ge0rutb8.jpg)
 
 
----
 
-Vue 实例
-
-所有的 Vue 组件都是 Vue 实例，并且接受相同的选项对象
-
-注意：响应式的数据，必须是在初始化vue 实例的时候，就存在于 data 属性里。所以如果预知后面会用到的变量，可以先设置初始值
-
-Vue实例暴露出来的属性和方法名字前都带有$
-
----
-
-生命周期
+## 生命周期
 
 生命周期钩子的 this 上下文指向调用它的 Vue 实例
 
@@ -194,10 +121,15 @@ v-model:默认绑定元素的 value 上面；radio、checkbox 绑定 checked
 ---
 
 模板语法
+
 插值：`{{}}`,绑定一次：v-once
+
 HTML: v-html
+
 text: v-text
+
 特性：“Mustache”语法 (双大括号) 不能用在特性上，要使用 v-bind
+
 以上值：可以使用 JavaScript 表达式，模板表达式，不能访问用户定义的全局变量
 
 ---
@@ -205,19 +137,6 @@ text: v-text
 指令：`v-`
 事件修饰符：如`v-on:submit.prevent`
 缩写：`v-bind:`=> `:` 、 `v-on:`=>`@`
-
----
-
-计算属性：computed
-
-可以像绑定普通属性一样在模板中绑定计算属性
-
-可以将同一函数定义为一个方法而不是一个计算属性。两种方式的最终结果确实是完全相同的。然而，不同的是计算属性是基于它们的依赖进行缓存的。
-
-计算属性的 setter
-
-侦听属性：watch
-当需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的
 
 ---
 
@@ -264,6 +183,7 @@ data: {
   errorClass: 'text-danger'
 }
 ```
+
 
 在组件上
 	
@@ -446,15 +366,20 @@ prop 向下传递（父传子），事件向上传递（子传父）
 如果你想把一个对象的所有属性作为 prop 进行传递，可以使用不带任何参数的 v-bind (即用 v-bind 而不是 v-bind:prop-name)。
 
 字面量语法 vs 动态语法
+
 some-prop="1" 	=> 字符串1
+
 :some-prop="1"	=> 数字1
 
 不应该在子组件内部改变 prop：想修改，可以通过下面方式，达到一样的效果
+
 1. 定义一个局部变量，并用 prop 的值初始化它：
 2. 定义一个计算属性，处理 prop 的值并返回：
 
 props 验证：
+
 注意 prop 会在组件实例创建之前进行校验，所以在 default 或 validator 函数里，诸如 data、computed 或 methods 等实例属性还无法使用。
+
 ```
 {
 	type: String,
@@ -496,37 +421,4 @@ props 验证：
 .sync 修饰符
 
 使用自定义事件的表单输入组件
-
-
 ---
-
-单向数据绑定：
-数据变化 -》 更新视图
-视图变化 -》 数据不变化
-
-双向数据绑定：
-数据变化 -》 更新视图
-视图变化 -》 数据变化
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
