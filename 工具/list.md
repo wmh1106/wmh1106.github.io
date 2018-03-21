@@ -1,0 +1,5 @@
+- cookie:[js-cookit](https://github.com/js-cookie/js-cookie)
+- [lodash](https://github.com/lodash/lodash)
+- [PostCSS](https://github.com/postcss/postcss/blob/master/README.cn.md)
+- 图片裁剪：[Jcrop](https://github.com/tapmodo/Jcrop)
+- 弹窗：[](http://layer.layui.com/)
