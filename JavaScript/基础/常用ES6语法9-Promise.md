@@ -1,0 +1,6 @@
+- Callback Hell
+- Promise 语法
+  - new Promise 实例，而且要 return
+  - new Promise 是要传入两个参数（函数），参数有 resolve，reject
+  - 成功时执行 resolve()，失败时执行 reject()
+  - then 监听结果
