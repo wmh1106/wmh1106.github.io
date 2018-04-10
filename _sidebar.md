@@ -1,4 +1,4 @@
-- [HTML](/HTML)
-- [CSS](/CSS)
-- [JavaScript](/JavaScript)
-- [Vue](/Vue)
+- [JavaScript](/JavaScript/)
+  - [ES6](/JavaScript/es6/)
+- [CSS](/CSS/)
+- [Vue](/Vue/)
