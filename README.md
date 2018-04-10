@@ -1,7 +1,5 @@
 # 个人笔记:[wmh1106.github.io](https://wmh1106.github.io/#/)
 
-
-
 ## 构建工具
 
 一个动态生成文档网站的工具：[docsify](https://docsify.js.org/#/zh-cn/quickstart)
@@ -9,7 +7,6 @@
 #### 本地预览网站
 
 `docsify serve [docs]`
-
 
 ## 学习视频
 
