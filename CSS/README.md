@@ -4,8 +4,8 @@
 - CSS 为将来做准备，有了CSS，HTML中的样式元素就被删除很多。
 
 - [常用术语](CSS/word.md)
-- [CSS选择器](CSS/04xuanzeqi.md)
 - [元素](CSS/01yuan-su.md)
+- [CSS选择器](CSS/04xuanzeqi.md)
 - [引入CSS方式](CSS/02yin-ru-fang-shi.md)
 - [CSS注释](CSS/03zhushi.md)
 - [CSS继承、特殊性、层叠](CSS/05CSSxing-zhi.md)

@@ -44,9 +44,10 @@ exports
 
 暴露 API： 依靠 module、 exports 这两个变量
 
-    每个模块（其实就是每个 js 文件），默认都会暴露一个空对象。
-        1. 如果想在这个空对象添加属性，使用module.exports即可。
-        2. 要是添加属性无法满足需求，可以重写 module.exports
+每个模块（其实就是每个 js 文件），默认都会暴露一个空对象。
+
+1. 如果想在这个空对象添加属性，使用module.exports即可。
+2. 要是添加属性无法满足需求，可以重写 module.exports
 
 ---
 
@@ -60,6 +61,7 @@ exports
 
 ---
 
+```javascript
 express
 
 use((req,res,next)=>{})
@@ -67,5 +69,6 @@ use((req,res,next)=>{})
 use((err,req,res,next)=>{})
 
 注册：use(mw1,mw2,mw3)
+```
 
 ![](https://ws4.sinaimg.cn/large/006tNc79gy1fnim6cun5lj315s0k8aft.jpg)
