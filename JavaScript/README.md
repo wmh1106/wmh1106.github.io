@@ -9,8 +9,8 @@
 - [07渲染](/JavaScript/07渲染)
 - [08优化](/JavaScript/08优化)
 - [ES6](/JavaScript/常用ES6的API)
-
-声明前置 
+- [声明前置](/JavaScript/声明前置)
+ 
 引用类型 
 闭包 
 跨域 
