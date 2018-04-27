@@ -19,5 +19,5 @@ var doing = bindName('jirengu')
 ```
 
 1. 因为 doing 在全局作用域永远无法被释放，
-2. 导致 bindName 里声明的fn 和 name 一直存在， 
+2. 导致 bindName 里声明的fn 和 name 一直存在
 3. 执行 doing 时会从创建 fn 所在的作用域获取 name
