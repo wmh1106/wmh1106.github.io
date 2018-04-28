@@ -13,10 +13,8 @@
       height: 600px;
       border: 1px solid;
 
-
       perspective: 800px;
-
-
+      /* perspective-origin: 50% 50%; */
     }
 
     .box:hover .imgBox {
@@ -34,7 +32,6 @@
       transition: transform 1s;
       transform: rotateY(0deg);
 
-      perspective-origin: 50% 50%;
       transform-style: preserve-3d;
 
     }
@@ -66,6 +63,11 @@
   <p>
     关键点在 before，after
     <mark>transform: translateZ(-1px);</mark>
+    <hr>
+    <ul>
+      <li>父级：perspective: 800px;perspective-origin: 50% 50%;</li>
+      <li>子元素：transform-style: preserve-3d;</li>
+    </ul>
   </p>
   <div class="box">
 
