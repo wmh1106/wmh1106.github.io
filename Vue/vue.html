@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    let vm = new Vue({
+      el: '#root',
+      data() {
+        return {
+          firstName: 'wmh',
+          lastName: 'ly'
+        }
+      },
+      template: '<div>{{firstName}} + {{lastName}} = {{fullName}}</div>',
+      computed: {
+        fullName: {
+          get: function () {
+            return this.firstName + this.lastName
+          },
+          set: function (value) {
+            const names = value.split(' ')
+            this.firstName = names[0]
+            this.lastName = names[1]
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
