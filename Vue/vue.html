@@ -10,28 +10,34 @@
 </head>
 
 <body>
-  <div id="root"></div>
+
+  <div id="root">
+
+    <!-- <component :is="type"></component> -->
+
+    <!-- <child-one :hhh="str1"></child-one> -->
+
+    <child-one :hhh="str2"></child-one>
+
+  </div>
+
   <script>
-    let vm = new Vue({
-      el: '#root',
-      data() {
-        return {
-          firstName: 'wmh',
-          lastName: 'ly'
-        }
-      },
-      template: '<div>{{firstName}} + {{lastName}} = {{fullName}}</div>',
-      computed: {
-        fullName: {
-          get: function () {
-            return this.firstName + this.lastName
-          },
-          set: function (value) {
-            const names = value.split(' ')
-            this.firstName = names[0]
-            this.lastName = names[1]
+    Vue.component('child-one', {
+      template: `<div>child --- {{hhh}}</div>`,
+      props: {
+        hhh: {
+          type: String,
+          validator: function (value) {
+            return (value.length < 5)
           }
         }
+      }
+    })
+    var vm = new Vue({
+      el: '#root',
+      data: {
+        // str1: 'fdkfjdkfjdkfjdkfjdkfjdkj',
+        str2: 'ddddfff'
       }
     })
   </script>
