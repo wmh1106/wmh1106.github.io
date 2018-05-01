@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>No.6 - 利用 CSS animation 制作一个炫酷的 Slider</title>
+  <style>
+    .wrapper {
+      position: relative;
+      margin: 0 auto;
+      width: 360px;
+      height: 296px;
+      overflow: hidden;
+    }
+
+    .wrapper .sidebars {
+      position: relative;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      width: 360px;
+      height: 296px;
+    }
+
+    .wrapper .slider {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      width: 360px;
+      height: 296px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url('https://video.jirengu.com/task-center/clients/fde7387c-170f-47a2-88d4-620ba79d22ff/uploads/1507800271397.jpg?imageslim|imageView2/1/w/400/h/400');
+    }
+
+    .wrapper .slider:nth-of-type(1):target {
+      position: relative;
+      z-index: 1;
+      animation-name: ani1;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-out;
+    }
+
+    .wrapper .slider:nth-child(2):target {
+      position: relative;
+      z-index: 1;
+      animation-name: ani2;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-out;
+    }
+
+    .wrapper .slider:nth-child(3):target {
+      position: relative;
+      z-index: 1;
+      animation-name: ani3;
+      animation-duration: 1s;
+      animation-timing-function: ease-in;
+    }
+
+    .wrapper .slider:nth-child(4):target {
+      position: relative;
+      z-index: 1;
+      animation-name: ani4;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+    }
+
+    .wrapper .slider:nth-child(5):target {
+      position: relative;
+      z-index: 1;
+      animation-name: ani5;
+      animation-duration: 0.7s;
+      animation-timing-function: ease-in-out;
+    }
+
+
+    @keyframes ani1 {
+      0% {
+        transform: translateX(-300px);
+      }
+      100% {
+        transform: translateX(0px);
+      }
+    }
+
+    @keyframes ani2 {
+      0% {
+        transform: translateY(160px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes ani3 {
+      0% {
+        transform: scale(0.1);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes ani4 {
+      0% {
+        transform: scale(2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes ani5 {
+      0% {
+        transform: scale(0.1) rotate(-360deg);
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+
+    .wrapper .paging {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .wrapper .paging>a {
+      float: left;
+      width: 50px;
+      height: 42px;
+      box-sizing: border-box;
+      border: 2px solid #333;
+      margin-right: 10px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url('https://video.jirengu.com/task-center/clients/fde7387c-170f-47a2-88d4-620ba79d22ff/uploads/1507800271397.jpg?imageslim|imageView2/1/w/400/h/400')
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="sidebars">
+      <div id="slider1" class="slider"></div>
+      <div id="slider2" class="slider"></div>
+      <div id="slider3" class="slider"></div>
+      <div id="slider4" class="slider"></div>
+      <div id="slider5" class="slider"></div>
+    </div>
+
+    <div class="paging">
+      <a href="#slider1" class="paging1"></a>
+      <a href="#slider2" class="paging2"></a>
+      <a href="#slider3" class="paging3"></a>
+      <a href="#slider4" class="paging4"></a>
+      <a href="#slider5" class="paging5"></a>
+    </div>
+  </div>
+
+
+  <p>
+    在有transform的标签里，定位好像有问题。 被这个坑死了。
+  </p>
+</body>
+
+</html>
