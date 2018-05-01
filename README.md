@@ -15,6 +15,11 @@
 - [幕课网视频：前端JavaScript面试技巧](https://coding.imooc.com/learn/list/115.html)
 - [妙味课堂：学习视频](https://study.miaov.com/study)
 
+## 文档
+
+[ES6](http://es6-features.org/#Constants)
+[Sass](http://sass.bootcss.com)
+
 ---
 
 PS:以后：想写把自己所学的那点知识就记录在这里了，不过好像没多少知识，一只手就数过来了
