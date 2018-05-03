@@ -6,40 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 </head>
 
 <body>
-
-  <div id="root">
-
-    <!-- <component :is="type"></component> -->
-
-    <!-- <child-one :hhh="str1"></child-one> -->
-
-    <child-one :hhh="str2"></child-one>
-
-  </div>
-
   <script>
-    Vue.component('child-one', {
-      template: `<div>child --- {{hhh}}</div>`,
-      props: {
-        hhh: {
-          type: String,
-          validator: function (value) {
-            return (value.length < 5)
-          }
-        }
-      }
-    })
-    var vm = new Vue({
-      el: '#root',
-      data: {
-        // str1: 'fdkfjdkfjdkfjdkfjdkfjdkj',
-        str2: 'ddddfff'
-      }
-    })
+    var removeDuplicates = function (nums) {
+      var a = Array.from(new Set([...nums]))
+      console.log(a)
+      return a
+    };
+    var nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+    console.log(removeDuplicates(nums))
   </script>
 </body>
 
