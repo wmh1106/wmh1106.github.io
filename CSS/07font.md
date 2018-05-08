@@ -12,14 +12,15 @@ font-style
 font-variant:字体变形
 ```
 
-## Icon 的使用
+## Icon 的使用（字体图标的使用）
 
-1. `<image />`：用标签
-2. `background`:用背景
-3. 精灵图（雪碧图）
-4. icon-font阿里字体库
-  - HTML 实体
-  - CSS 伪类
-5. SVG：支持彩色
+* `<image />`：用标签
+* `background`:用背景
+* 精灵图（雪碧图）
+* icon-font 阿里字体库
+  * HTML 实体
+  * CSS 伪类
+* SVG：支持彩色
 
 实现原理：HTML 实体。
+[字体图标库的链接](http://www.iconfont.cn/)
