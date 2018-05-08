@@ -1,5 +1,3 @@
 - [JavaScript](/js/)
 - [CSS](/css/)
-- [HTML](/html/)
 - [Vue](/vue/)
-- [Node](/node/)
