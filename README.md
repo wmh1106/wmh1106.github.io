@@ -8,14 +8,7 @@
 
 `docsify serve [docs]`
 
-## 学习过视频
-
-- [幕课网视频：揭秘一线互联网企业 前端JavaScript高级面试](https://coding.imooc.com/class/190.html)
-- [幕课网视频：前端跳槽面试必备技巧](https://coding.imooc.com/class/129.html)
-- [幕课网视频：前端JavaScript面试技巧](https://coding.imooc.com/learn/list/115.html)
-- [妙味课堂：学习视频](https://study.miaov.com/study)
-
-## 文档
+## 资料
 
 [ES6](http://es6-features.org/#Constants)
 [Sass](http://sass.bootcss.com)
