@@ -7,5 +7,5 @@
 
 ---
 
-- 数字*`font-size`
-- 百分比*`font-size`
+- 数字 * `font-size`
+- 百分比 * `font-size`
