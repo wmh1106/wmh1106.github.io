@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <style>
+    .images {
+      display: flex;
+      align-items: flex-start;
+      transition: all 0.5s;
+    }
+
+    .images>img {
+      vertical-align: top;
+    }
+
+    .window {
+      width: 300px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="window">
+    <div class="images"
+         id=images>
+      <img src="https://fthmb.tqn.com/0ui_Zw01Ht9NHJkSBlqOIC1IH44=/960x0/filters:no_upscale()/yorkshire-terrier-583788122-581630e85f9b581c0b018a00.jpg"
+    
+           width=300
+           alt="图片1"
+           height=200>
+      <img src="https://canna-pet.com/wp-content/uploads/2017/06/20-longest-living-dog-breeds_canna-pet-e1498599846169.jpg"
+    
+           width=300
+           alt=""
+           height=200>
+      <img src="https://fthmb.tqn.com/0ui_Zw01Ht9NHJkSBlqOIC1IH44=/960x0/filters:no_upscale()/yorkshire-terrier-583788122-581630e85f9b581c0b018a00.jpg"
+    
+           width=300
+           alt=""
+           height=200>
+      <img src="https://canna-pet.com/wp-content/uploads/2017/06/20-longest-living-dog-breeds_canna-pet-e1498599846169.jpg"
+    
+           width=300
+           alt=""
+           height=200>
+    </div>
+  </div>
+  <div id='buttons'>
+    <span class='red'>第1张</span>
+    <span>第2张</span>
+    <span>第3张</span>
+    <span>第4张</span>
+  </div>
+
+  <script>
+    var allBtns = $('#buttons > span');
+    var n = 0,
+      counts = $('img').length,
+      intervalId = play();
+
+    $(allBtns).click((e) => {
+      window.clearInterval(intervalId);
+      var index = $(e.currentTarget).index(),
+        x = index * -300;
+      $('#images').css({
+        transform: 'translate(' + x + 'px)'
+      });
+      $(allBtns[index]).addClass('red').siblings('.red').removeClass('red');
+      n = index;
+      intervalId = play();
+    });
+
+    $('.window').mouseenter(() => {
+      window.clearInterval(intervalId);
+    });
+    $('.window').mouseleave(() => {
+      intervalId = play();
+    });
+
+    function play() {
+      return setInterval(() => {
+        n += 1;
+        $(allBtns[n % counts]).trigger('click');
+      }, 2000);
+    }
+  </script>
+</body>
+
+</html>
