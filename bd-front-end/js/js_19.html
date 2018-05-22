@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>IFE ECMAScript-找到那个DOM</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="news-top" class="section">
+      <h3>Some title</h3>
+      <div class="content">
+        <ul>
+          <li><span>HTML</span><a href="">Some Link1</a></li>
+          <li><span>JS</span><a class="active" href="">Some Link2</a></li>
+          <li><span>CSS</span><a href="">Some Link3</a></li>
+          <li><span>JS</span><a href="">Some Link4</a></li>
+        </ul>
+      </div>
+      <img src="">
+      <p class="">Some Text</p>
+    </div>
+    <div id="news-normal" class="section">
+      <h3>Some title</h3>
+      <div class="content">
+        <ul>
+          <li><span>HTML</span><a href="">Some Link1</a></li>
+          <li><span>HTML</span><a href="">Some Link2</a></li>
+          <li><span>JS</span><a class="active" href="#">Some Link3</a></li>
+          <li><span>CSS</span><a href="">Some Link4</a></li>
+        </ul>
+      </div>
+      <img src="">
+      <p class="">Some Text</p>
+    </div>
+  </div>
+  <script>
+    /*
+        使用上诉代码，分别实现 script 标签中的几个函数。
+
+        在这个练习中仅允许使用以下 DOM 方法或属性，不得使用高级选择器
+
+        getElementById()
+        getElementsByTagName()
+        childNodes
+        parentNode
+
+        */
+    function getAllListItem() {
+      // 返回页面中所有li标签
+      return document.getElementsByTagName('li')
+    }
+
+    function findAllHtmlSpanInOneSection(sectionId) {
+      // 返回某个section下所有span中内容为HTML的span标签
+      const parent = document.getElementById(sectionId)
+      if (parent) {
+        const spanElement = parent.getElementsByTagName('span')
+        return Array.from(spanElement).filter(el => {
+          return el.innerText === 'HTML'
+        })
+      }
+      return null
+    }
+
+    function findListItem(sectionId, spanCont) {
+      
+    }
+
+    function getActiveLinkContent(sectionId) {
+      // 返回某个section下，class为active的链接中包含的文字内容
+      const parent = document.getElementById(sectionId)
+      if (parent) {
+        const aElement = parent.getElementsByTagName('a')
+        return Array.from(aElement).filter(el => {
+          return el.innerText !== '' && el.classList.contains('active')
+        })
+      }
+      return null
+    }
+    const li = getAllListItem()
+    console.log(li)
+
+    const span = findAllHtmlSpanInOneSection('news-normal')
+    console.log(span)
+
+    const a = getActiveLinkContent('wrapper');
+    console.log(a)
+    
+  </script>
+</body>
+
+</html>
