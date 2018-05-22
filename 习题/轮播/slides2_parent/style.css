@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.warp {
+  position: relative;
+  margin: 20px auto;
+  width: 500px;
+  height: 313px;
+  border: 1px solid red;
+  overflow: hidden;
+}
+.warp *{
+  box-sizing: border-box;
+}
+.warp > .buttons span {
+  z-index: 2;
+  position: absolute;
+  background-color: rgba(0, 0,0, 0.5);
+  color:#fff;
+  font-size: 20px;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  top: 45%;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+}
+.warp #prev {
+  left: 0;
+}
+.warp #next {
+  right: 0;
+}
+.images {
+  position: relative;
+  left:-500px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s;
+}
+
+.images > img {
+  flex-shrink: 0;
+}
+
+
+.items {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.items > span {
+  cursor: pointer;
+  margin: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(240, 240, 240, 0.8);
+  transition: all 0.3s;
+}
+.items > span.active {
+  transform: scale(1.2);
+  background-color: rgba(255, 153, 153, 0.8);
+}
