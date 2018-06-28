@@ -10,3 +10,12 @@
 
 ![示意图](./img/43.jpg)
 
+
+---
+3D中：
+
+  perspective 必须初始化
+
+
+会触发多次 根据属性来算的
+事件transitionend ：判断运动完成
