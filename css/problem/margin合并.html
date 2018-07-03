@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>margin 合并</title>
+    <style>
+        *{margin:0;padding:0;box-sizing: border-box;}
+        .parent{outline: 1px solid red;padding-left:10px;padding-right:10px; margin:10px 0;}
+        .child{border: 1px solid;margin: 30px 0;}
+
+        li{width:100px;height: 100px; border:1px solid; margin:20px 0;}
+    </style>
+</head>
+<body>
+    <h2>父子节点中：margin 的合并</h2>
+    <div class="parent">
+        <div class="child">child</div>
+    </div>
+
+    <h2>兄弟节点中：margin 的合并</h2>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>
