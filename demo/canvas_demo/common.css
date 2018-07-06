@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+canvas{
+    vertical-align: top;
+}
+
+.tool{
+  position:fixed;
+  left:0;
+  bottom:0;
+}
+.tool>#brush{
+  display: none;
+}
+.tool.x > #eraser{
+  display: inline-block;
+}
+.tool.x > #brush{
+  display: none;
+}
+
