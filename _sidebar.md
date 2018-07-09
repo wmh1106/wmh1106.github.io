@@ -1,3 +1,0 @@
-- [JavaScript](/js/)
-- [CSS](/css/)
-- [Vue](/vue/)
