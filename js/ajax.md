@@ -130,3 +130,7 @@ window.jQuery.ajax = function({url, method, body, successFn, failFn, headers}){
   request.send(body)
 }
 ```
+
+## `Promise`形式的AJAX
+
+return new Promise((resolve,reject)=>{})
