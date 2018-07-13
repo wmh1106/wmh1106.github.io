@@ -9,3 +9,5 @@
 
 UI 组件负责渲染
 容器组件负责页面逻辑
+
+React Fiber => 指 React16版本
