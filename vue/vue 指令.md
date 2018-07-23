@@ -1,9 +1,9 @@
 # 指令
 
-* v-text、v-html、v-pre、v-once、v-cloak
-* v-bind、v-model
-* v-for、v-show、v-if、v-else、v-else-if
-* v-on
+- v-text、v-html、v-pre、v-once、v-cloak
+- v-bind、v-model
+- v-for、v-show、v-if、v-else、v-else-if
+- v-on
 
 ## v-text : 文本
 
@@ -25,9 +25,9 @@
 
 修饰符
 
-* lazy
-* number
-* trim
+- lazy
+- number
+- trim
 
 ## 指令缩写
 
@@ -38,16 +38,16 @@
 
 不同的指令有不同的参数，具体作用由定义的指令来决定
 
-* v-bind:属性名称.修饰符
-* v-on:事件名称.修饰符
+- v-bind:属性名称.修饰符
+- v-on:事件名称.修饰符
 
 ## 绑定事件`v-on:`
 
 ### 1. 事件对象：在 vue 实例`methods`属性中，
 
-* 事件的绑定函数 中默认第一个参数就是事件对象，在模板中，事件的绑定函数不带括号
-* 事件的绑定函数 在模板中带括号，这时候要用事件对象，就要显示传入，传入`$event`
-* 事件的绑定函数 需要传入参数，这时候要用事件对象，就要显示传入，传入`$event`
+- 事件的绑定函数 中默认第一个参数就是事件对象，在模板中，事件的绑定函数不带括号
+- 事件的绑定函数 在模板中带括号，这时候要用事件对象，就要显示传入，传入`$event`
+- 事件的绑定函数 需要传入参数，这时候要用事件对象，就要显示传入，传入`$event`
 
 ```javascript
 // html中
@@ -70,38 +70,38 @@ fn(num,ev){}
 
 不同的指令有不同的修饰符，具体作用由定义的指令来决定
 
-* 原生 js 的写法
-  * 阻止默认  行为： `event.preventDefault()`
-  * 阻止  冒泡：`event.stopPropagation()`
-* Vue 的写法
-  * @click.prevent
-  * @click.stop
+- 原生 js 的写法
+  - 阻止默认  行为： `event.preventDefault()`
+  - 阻止  冒泡：`event.stopPropagation()`
+- Vue 的写法
+  - @click.prevent
+  - @click.stop
 
 上下文菜单事件：`contextmenu`
 
 ## 自定义指令
 
-* 自定义指令，都写在实例的`directives`属性中
-* 自定义指令名，就是`directives`属性的`key`值，创建的时候指令的名称不需要`v-`，使用时加`v-`
-* 自定义指令也是一个对象，先确定这个指令需要在哪个时间起作用。一共有 5 个钩子函数，跟`Vue`生命周期函数性质一样。[文档](https://cn.vuejs.org/v2/guide/custom-directive.html#%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0)
-  * bind
-  * inserted
-  * update
-  * componentUpdated
-  * unbind
-* 在钩子函数里写逻辑代码
-  * 钩子函数的参数，除了 el 之外，其它参数都应该是只读的，切勿进行修改
-  * 既然`binding`是只读的，我就存个变量里。保证引用地址不同，然后就修改这个新定义的变量就好了。binding 对象里的属性值不变。
-  * 钩子函数在指定过程会接收到一些参数
-    * el : 当前指令绑定的元素（原生）
-    * binding: 对象
-      * name: 指令名称
-      * rawName: 包含 v-的名称
-      * value: 指令的值，表达式值，被 vue 解析过
-      * oldValue
-      * expression: 指令的值（字符串值）
-      * arg
-      * modifiers
+- 自定义指令，都写在实例的`directives`属性中
+- 自定义指令名，就是`directives`属性的`key`值，创建的时候指令的名称不需要`v-`，使用时加`v-`
+- 自定义指令也是一个对象，先确定这个指令需要在哪个时间起作用。一共有 5 个钩子函数，跟`Vue`生命周期函数性质一样。[文档](https://cn.vuejs.org/v2/guide/custom-directive.html#%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0)
+  - bind
+  - inserted
+  - update
+  - componentUpdated
+  - unbind
+- 在钩子函数里写逻辑代码
+  - 钩子函数的参数，除了 el 之外，其它参数都应该是只读的，切勿进行修改
+  - 既然`binding`是只读的，我就存个变量里。保证引用地址不同，然后就修改这个新定义的变量就好了。binding 对象里的属性值不变。
+  - 钩子函数在指定过程会接收到一些参数
+    - el : 当前指令绑定的元素（原生）
+    - binding: 对象
+      - name: 指令名称
+      - rawName: 包含 v-的名称
+      - value: 指令的值，表达式值，被 vue 解析过
+      - oldValue
+      - expression: 指令的值（字符串值）
+      - arg
+      - modifiers
 
 ```javascript
 <template>
