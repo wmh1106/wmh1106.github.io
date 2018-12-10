@@ -1,5 +1,6 @@
 var http = require('http')
 var fs = require('fs')
+var template = require('art-template')
 // 返回一个 Server 实例
 var server = http.createServer()
 
@@ -17,7 +18,6 @@ server.on('request', function (req, res) {
         // 默认读取到的 data 是二进制数据
         // 而模板引擎的 render 方法需要接收的是字符串
         // 所以我们在这里需要把 data 二进制数据转为 字符串 才可以给模板引擎使用
-
         res.setHeader('Content-Type', 'text/plain; charset=utf-8');
         var ret = template.render(data.toString(), {
           name: 'Jack',
@@ -32,7 +32,7 @@ server.on('request', function (req, res) {
         })
       
         console.log(ret)
-        res.end(data)
+        res.end(ret)
       }
     })
   }
