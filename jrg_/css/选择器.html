@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #header .logo1~p {
+      color: red;
+    }
+
+    #header .logo2+p {
+      background: green;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <blockquote>
+    <p>7、#header .logo1~p{}选择id为header中class后代为 logo的所有同级的相邻的;</p>
+    <p>8、#header .logo2+p{}选择id为header中后代class为 logo的相邻的p标签元素</p>
+  </blockquote>
+
+  <div id="header">
+    <div>
+      <p>前</p>
+      <p>前</p>
+      <p>前</p>
+      <div class="logo1">logo</div>
+      <p>后</p>
+      <p>后</p>
+      <p>后</p>
+    </div>
+    <hr>
+    <div>
+      <p>前</p>
+      <p>前</p>
+      <p>前</p>
+      <div class="logo2">logo</div>
+      <p>后</p>
+      <p>后</p>
+      <p>后</p>
+    </div>
+  </div>
+
+</body>
+
+</html>
